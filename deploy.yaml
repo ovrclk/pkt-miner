@@ -1,0 +1,33 @@
+version: "2.0"
+services:
+  main:
+    image: ghcr.io/ovrclk/pkt-miner:v0.0.1
+    env:
+      - PAYMENT_ADDR=pkt1qerdanlxwsrd9zl42r2y7mdlthsy7tnlujuvnze
+profiles:
+  compute:
+    miner:
+      resources:
+        cpu:
+          units: 10
+        memory:
+          size: 512Mi
+        storage:
+          size: 512Mi
+  placement:
+    any:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+      pricing:
+        web: 
+          denom: uakt
+          amount: 1000
+
+deployment:
+  web:
+    any:
+      profile: miner
+      count: 1
