@@ -3,7 +3,8 @@ services:
   main:
     image: ghcr.io/ovrclk/pkt-miner:v0.0.1
     env:
-      - PAYMENT_ADDR=pkt1qerdanlxwsrd9zl42r2y7mdlthsy7tnlujuvnze
+      - PAYMENT_ADDR=your-address-here
+      - POOL_HOST=http://pool.pkteer.com
 profiles:
   compute:
     miner:
