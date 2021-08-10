@@ -1,25 +1,28 @@
 version: "2.0"
 services:
   main:
-    image: ghcr.io/ovrclk/pkt-miner:v0.0.1
+    image: chandrastation/pkt_on_akash
     env:
-      - PAYMENT_ADDR=your-address-here
-      - POOL_HOST=http://pool.pkteer.com
+      - WALLET_ADDR=<your-address-here>
+      - POOL1=http://pool.pkteer.com
+      - POOL2=http://pool.pktpool.io
+      - POOL3=http://pool.pkt.world
+      - POOL4=http://pool.srizbi.com
     expose:
-      - port: 80
+      - port: 8080
+        as: 80
         to:
           - global: true
-
 profiles:
   compute:
     miner:
       resources:
         cpu:
-          units: 10
+          units: 1
         memory:
-          size: 512Mi
+          size: 1Gi
         storage:
-          size: 512Mi
+          size: 1Gi
   placement:
     any:
       attributes:
@@ -31,7 +34,6 @@ profiles:
         miner:
           denom: uakt
           amount: 1000
-
 deployment:
   main:
     any:
