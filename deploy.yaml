@@ -1,18 +1,19 @@
 version: "2.0"
 services:
   main:
-    image: chandrastation/pkt_on_akash
+    image: chandrastation/pkt_on_akash:latest
     env:
-      - WALLET_ADDR=<your-address-here>
+      - PAYMENT_ADDR=<PKT_Wallet>
       - POOL1=http://pool.pkteer.com
       - POOL2=http://pool.pktpool.io
       - POOL3=http://pool.pkt.world
-      - POOL4=http://pool.srizbi.com
+      - POOL4=http://pool.srizbi.com 
     expose:
-      - port: 8080
+      - port: 3000
         as: 80
         to:
           - global: true
+
 profiles:
   compute:
     miner:
@@ -20,9 +21,9 @@ profiles:
         cpu:
           units: 1
         memory:
-          size: 1Gi
+          size: 1 Gi
         storage:
-          size: 1Gi
+          size: 1 Gi
   placement:
     any:
       attributes:
@@ -34,6 +35,7 @@ profiles:
         miner:
           denom: uakt
           amount: 1000
+
 deployment:
   main:
     any:
