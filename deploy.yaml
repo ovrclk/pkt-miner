@@ -3,7 +3,7 @@ services:
   miner:
     image: chandrastation/pkt_on_akash:v1.0.0
     env:
-      - PAYMENT_ADDR=<PKT_Wallet>
+      - WALLET_ADDR=<PKT_Wallet>
       - POOL1=http://pool.pkteer.com
       - POOL2=http://pool.pktpool.io
       - POOL3=http://pool.pkt.world
