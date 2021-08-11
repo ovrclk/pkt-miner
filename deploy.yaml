@@ -1,6 +1,6 @@
 version: "2.0"
 services:
-  main:
+  miner:
     image: chandrastation/pkt_on_akash:latest
     env:
       - PAYMENT_ADDR=<PKT_Wallet>
@@ -21,11 +21,11 @@ profiles:
         cpu:
           units: 1
         memory:
-          size: 1 Gi
+          size: 1Gi
         storage:
-          size: 1 Gi
+          size: 1Gi
   placement:
-    any:
+    miner:
       attributes:
         host: akash
       signedBy:
@@ -37,7 +37,7 @@ profiles:
           amount: 1000
 
 deployment:
-  main:
-    any:
+  miner:
+    miner:
       profile: miner
       count: 1
