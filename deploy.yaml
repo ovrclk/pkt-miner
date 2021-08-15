@@ -4,10 +4,11 @@ services:
     image: chandrastation/pkt_on_akash:v1.0.0
     env:
       - WALLET_ADDR=<PKT_Wallet>
-      - POOL1=http://pool.pkteer.com
+      - POOL1=http://pool.srizbi.com 
       - POOL2=http://pool.pktpool.io
       - POOL3=http://pool.pkt.world
-      - POOL4=http://pool.srizbi.com 
+      - POOL4=http://pool.pkteer.com
+      - POOL5=http://pool.pktco.in
     expose:
       - port: 3000
         as: 80
