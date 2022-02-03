@@ -1,10 +1,10 @@
 version: "2.0"
 services:
   miner:
-    image: chandrastation/pkt_on_akash:v1.0.0
+    image: andrey01/pkt_on_akash:v0.5.1-72acbb46
     env:
       - WALLET_ADDR=<PKT_Wallet>
-      - POOL1=http://pool.srizbi.com 
+      - POOL1=https://stratum.zetahash.com
       - POOL2=http://pool.pktpool.io
       - POOL3=http://pool.pkt.world
       - POOL4=http://pool.pkteer.com
